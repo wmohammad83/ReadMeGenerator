@@ -34,11 +34,11 @@ inquirer
     //   name: "projectLicense",
     //   choices: Object.keys(badges),
     // },
-    // {
-    //   type: "input",
-    //   message: "How do you install the project?",
-    //   name: "projectInstall",
-    // },
+    {
+      type: "input",
+      message: "What is your GitHub username?",
+      name: "projectGithub",
+    },
     // {
     //   type: "input",
     //   message: "How do you use the project",
@@ -107,7 +107,7 @@ To run tests, run the following command:
     
 ## Questions
     
-If you have any questions about the repo, open an issue or contact me directly at ${response.email}. You can find more of my work at [dmueller2u](https://github.com/dmueller2u/).
+If you have any questions about the repo, open an issue or contact me directly at ${response.email}. You can find more of my work at [${response.projectGithub}](https://github.com/${response.projectGithub}/).
 
 
 

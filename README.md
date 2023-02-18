@@ -1,11 +1,11 @@
 
-# QWEFWEGREW
+# The Masters
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
     
 ## Description
     
-WRGETBVFSD
+all about being the master of the world
     
 ## Table of Contents 
     
@@ -51,7 +51,7 @@ To run tests, run the following command:
     
 ## Questions
     
-If you have any questions about the repo, open an issue or contact me directly at DSGEF. You can find more of my work at [dmueller2u](https://github.com/dmueller2u/).
+If you have any questions about the repo, open an issue or contact me directly at waseem@gotmail.com. You can find more of my work at [wmohammad83](https://github.com/wmohammad83/).
 
 
 
