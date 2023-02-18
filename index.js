@@ -8,11 +8,11 @@ const badges = {
 
 inquirer
   .prompt([
-    // {
-    //   type: "input",
-    //   message: "What is your full name?",
-    //   name: "fullname",
-    // },
+    {
+      type: "input",
+      message: "What is your GitHub username?",
+      name: "projectGithub",
+    },
     {
       type: "input",
       message: "What is your email?",
@@ -28,27 +28,32 @@ inquirer
       message: "give a description of your project",
       name: "projectDescription",
     },
-    // {
-    //   type: "list",
-    //   message: "License used",
-    //   name: "projectLicense",
-    //   choices: Object.keys(badges),
-    // },
     {
       type: "input",
-      message: "What is your GitHub username?",
-      name: "projectGithub",
+      message: "What command is needed to install the necessary dependencies?",
+      name: "projectInstallation",
     },
-    // {
-    //   type: "input",
-    //   message: "How do you use the project",
-    //   name: "projectUsage",
-    // },
-    // {
-    //   type: "input",
-    //   message: "What license does the project use",
-    //   name: "projectLicense",
-    // },
+    {
+      type: "input",
+      message: "What command is needed to use the application?",
+      name: "projectUsage",
+    },
+    {
+      type: "list",
+      message: "License used",
+      name: "projectLicense",
+      choices: Object.keys(badges),
+    },
+    {
+      type: "input",
+      message: "How do you test your project?",
+      name: "projectTest",
+    },
+    {
+      type: "input",
+      message: "How do contribute in the project",
+      name: "projectContributing",
+    },
   ])
 
   .then((response) => {
@@ -57,7 +62,7 @@ inquirer
     const generateREADME = `
 # ${response.projectTitle}
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-${response.projectLicense}-blue.svg)
     
 ## Description
     
@@ -79,38 +84,36 @@ ${response.projectDescription}
     
 ## Installation
     
-To install necessary dependencies, run the following command:
-    
-    
-// npm install
-    
+To install necessary dependencies, run the following command: 
+
+    ${response.projectInstallation}
+        
     
 ## Usage
     
-You can use this applicaiton by running .
+You can use this applicaiton by running \`${response.projectUsage}\`
     
 ## License
     
-This project is licensed under the MIT license.
+This project is licensed under the ${response.projectLicense} license.
         
 ## Contributing Here Is A Header
     
-Fork and pull request.
+${response.projectContributing}
     
 ## Tests
     
 To run tests, run the following command:
     
  
-// npm test
+    ${response.projectTest}
 
     
 ## Questions
     
 If you have any questions about the repo, open an issue or contact me directly at ${response.email}. You can find more of my work at [${response.projectGithub}](https://github.com/${response.projectGithub}/).
 
-
-
+This README.md has been created using the readme generator available from [here](https://github.com/wmohammad83/ReadMeGenerator).
 `;
 
     fs.writeFile("README.md", generateREADME, (err) => {
