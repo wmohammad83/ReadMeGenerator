@@ -1,7 +1,7 @@
 
 # ReadMe Generator
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-IBM-blue.svg)
     
 ## Description
     
@@ -34,7 +34,7 @@ You can use this applicaiton by running `node index.js`
     
 ## License
     
-This project is licensed under the MIT license.
+This project is licensed under the IBM license.
         
 ## Contributing Here Is A Header
     

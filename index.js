@@ -1,11 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-const badges = {
-  MIT: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
-  ISC: "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
-};
-
 inquirer
   .prompt([
     {
@@ -42,7 +37,7 @@ inquirer
       type: "list",
       message: "License used",
       name: "projectLicense",
-      choices: Object.keys(badges),
+      choices: ["MIT", "GNU", "ISC", "IBM", "Apache"],
     },
     {
       type: "input",
@@ -57,8 +52,7 @@ inquirer
   ])
 
   .then((response) => {
-    // console.log(`Success! User: ${response.fullname}`);
-
+  
     const generateREADME = `
 # ${response.projectTitle}
 
